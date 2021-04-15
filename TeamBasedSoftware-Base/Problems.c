@@ -9,6 +9,7 @@
 #include <conio.h>
 #include "Problems.h"
 #include "Adventure.h"
+#include "Leaderboard.h"
 
 void intializeProblems(problems *wordProblem) {
 
@@ -92,8 +93,8 @@ int displayProblem(problems *wordProblem, int numProblems) {
 		hangman(wordProblem, randomProblem);
 	}
 
-	wordProblem[randomProblem] = wordProblem[numProblems];	
 	numProblems--;											//decreases the current number of available problems by 1
+	wordProblem[randomProblem] = wordProblem[numProblems];	
 
 	return numProblems;
 }

@@ -8,6 +8,7 @@
 #include <Windows.h>
 #include "Problems.h"
 #include "Adventure.h"
+#include "Leaderboard.h"
 
 void intializeStory(char *storyElements[NUM_PROBLEMS]) {
 

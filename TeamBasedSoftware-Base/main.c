@@ -5,6 +5,7 @@
 #include <string.h>
 #include "Problems.h"
 #include "Adventure.h"
+#include "Leaderboard.h"
 
 int main() {
 
@@ -15,6 +16,8 @@ int main() {
 
 	intializeProblems(wordProblem);
 	intializeStory(storyElements);	
+
+	mainMenu();
 
 	for (int i = 0; i <= MAX_COMPLETE; i++) {
 
