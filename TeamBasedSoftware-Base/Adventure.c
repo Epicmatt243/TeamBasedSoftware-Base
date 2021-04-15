@@ -50,8 +50,8 @@ int displayStory(char *storyElements[NUM_PROBLEMS], int numStories) {
 
 	int storyLength = strlen(storyElements[randomStory]);
 
-	for (int i = 0; i < storyLength; i++)
-	{
+	for (int i = 0; i < storyLength; i++)				//this loop here prints out a single character of the story piece,
+	{													//then waits a split second before printing the next.
 		printf("%c", storyElements[randomStory][i]);
 		Sleep(25);
 	}

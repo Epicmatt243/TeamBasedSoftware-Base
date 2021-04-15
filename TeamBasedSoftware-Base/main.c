@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
+#include <Windows.h>
 #include <string.h>
 #include "Problems.h"
 #include "Adventure.h"
@@ -21,7 +22,9 @@ int main() {
 		
 		readyProblems = displayProblem(wordProblem, readyProblems);
 
+		system("cls");		//clears the command window
 
+		//should print out a message if the user got it right or wrong
 
 	}
 	
