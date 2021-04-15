@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <Windows.h>
 #include "Problems.h"
 #include "Adventure.h"
 
@@ -47,7 +48,13 @@ int displayStory(char *storyElements[NUM_PROBLEMS], int numStories) {
 	srand(time(NULL));
 	int randomStory = rand() % numStories;				//randomly generated number used to select an unused story piece
 
-	printf("\n%s\n", storyElements[randomStory]);
+	int storyLength = strlen(storyElements[randomStory]);
+
+	for (int i = 0; i < storyLength; i++)
+	{
+		printf("%c", storyElements[randomStory][i]);
+		Sleep(25);
+	}
 
 	storyElements[randomStory] = storyElements[numStories];
 	numStories--;											//decreases the current number of available problems by 1
