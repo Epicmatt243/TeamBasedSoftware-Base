@@ -8,7 +8,7 @@
 #include "Problems.h"
 #include "Adventure.h"
 
-void intializeStory(char *storyElements) {
+void intializeStory(char *storyElements[NUM_PROBLEMS]) {
 
 	storyElements[0] = "\n\nYou find a large temple that appears to be made of gold... \nThe front door is locked, and on it is a sentence you can't quite make out...\n";
 
@@ -42,7 +42,7 @@ void intializeStory(char *storyElements) {
 	
 }
 
-int displayStory(char *storyElements, int numStories) {
+int displayStory(char *storyElements[NUM_PROBLEMS], int numStories) {
 
 	srand(time(NULL));
 	int randomStory = rand() % numStories;				//randomly generated number used to select an unused story piece

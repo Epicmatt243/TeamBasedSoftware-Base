@@ -1,5 +1,5 @@
 #pragma once
 
-void intializeStory(char*);
+void intializeStory(char*[NUM_PROBLEMS]);
 
-int displayStory(char*, int);
+int displayStory(char*[NUM_PROBLEMS], int);
