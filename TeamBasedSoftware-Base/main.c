@@ -14,11 +14,11 @@ int main() {
 	char *storyElements[NUM_PROBLEMS];
 
 	intializeProblems(wordProblem);
-	intializeStory(storyElements);			//theres a bug here where they aren't properly intialized, I havent gotten the chance to really figure it out yet
+	intializeStory(storyElements);	
 
 	for (int i = 0; i <= MAX_COMPLETE; i++) {
 
-		readyStories = displayStory(storyElements, readyStories);		//theres currently a bug with intializing the story elements
+		readyStories = displayStory(storyElements, readyStories);
 		
 		readyProblems = displayProblem(wordProblem, readyProblems);
 
