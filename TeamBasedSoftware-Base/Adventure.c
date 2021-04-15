@@ -56,7 +56,7 @@ int displayStory(char *storyElements[NUM_PROBLEMS], int numStories) {
 		Sleep(25);
 	}
 
-	storyElements[randomStory] = storyElements[numStories];
+	storyElements[randomStory] = storyElements[numStories-1];
 	numStories--;											//decreases the current number of available problems by 1
 
 	return numStories;
