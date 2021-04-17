@@ -18,6 +18,6 @@ void intializeProblems(problems*);
 
 int displayProblem(problems*, int);
 
-void getPlayerAnswer(problems*, int);
+int getPlayerAnswer(problems*, int, int);
 
 void hangman(problems*, int);

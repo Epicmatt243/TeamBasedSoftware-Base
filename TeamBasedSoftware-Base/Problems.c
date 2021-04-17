@@ -79,14 +79,13 @@ int displayProblem(problems *wordProblem, int numProblems) {
 	srand(time(NULL));
 	int randomProblem = rand() % numProblems;	//randomly generated number used to select an unused problem
 
-	if (wordProblem[randomProblem].type == UNSCRAMBLE) {	//for unscramble problems
-		printf("\n%s\n", wordProblem[randomProblem].problem);
-		getPlayerAnswer(wordProblem, randomProblem);
-	}
-
-	else if (wordProblem[randomProblem].type == RIDDLE) {	//for riddle problems
-		printf("\n%s\n", wordProblem[randomProblem].problem);
-		getPlayerAnswer(wordProblem, randomProblem);
+	if (wordProblem[randomProblem].type == UNSCRAMBLE || wordProblem[randomProblem].type == RIDDLE) {	//for unscramble problems and riddles
+		for (int attempts = 1; attempts <= 4; attempts++)
+		{
+			printf("\n%s\n", wordProblem[randomProblem].problem);
+			if (getPlayerAnswer(wordProblem, randomProblem, attempts))
+				break;
+		}
 	}
 
 	else if (wordProblem[randomProblem].type == HANGMAN) {	//for hangman problems
@@ -100,7 +99,7 @@ int displayProblem(problems *wordProblem, int numProblems) {
 }
 
 
-void getPlayerAnswer(problems *wordProblem, int currentProblemNum) {
+int getPlayerAnswer(problems *wordProblem, int currentProblemNum, int currentAttempt) {
 
 	char input[MAX_INPUT_LENGTH];
 
@@ -108,14 +107,15 @@ void getPlayerAnswer(problems *wordProblem, int currentProblemNum) {
 
 	if (!strcmp(wordProblem[currentProblemNum].answer, input)) {
 
-		//sends information to point system module as a correct answer
-
+		//should send information(like the currentAttempt #) to point system module as a correct answer
+		return 1;
 	}
 	
 	else {
 
-		//sends information to point system module as an incorrect answer
-
+		//should this send information to point system module as an incorrect answer?
+		//or not communicate with point system module at all?
+		return 0;
 	}
 
 }
