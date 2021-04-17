@@ -30,8 +30,8 @@ void intializeProblems(problems *wordProblem) {
 	strcpy(wordProblem[3].answer, "burger");
 
 	wordProblem[4].type = UNSCRAMBLE;
-	strcpy(wordProblem[4].problem, "\n\nUnscramble the following word: dwors");
-	strcpy(wordProblem[4].answer, "sword");
+	strcpy(wordProblem[4].problem, "\n\nUnscramble the following word: dhlies");
+	strcpy(wordProblem[4].answer, "shield");
 
 	wordProblem[5].type = UNSCRAMBLE;
 	strcpy(wordProblem[5].problem, "\n\nUnscramble the following word: poartl");
