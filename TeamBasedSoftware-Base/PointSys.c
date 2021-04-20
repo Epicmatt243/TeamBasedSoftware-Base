@@ -46,7 +46,6 @@ int levelScore(int lvlTries, int lvlType, bool complete) {
 	int initialScore = 128;
 	int tempScore;
 	int lvlScore;
-	double dLvlTries = (double)lvlTries;
 	switch (lvlTries)
 	{
 	case 1:
