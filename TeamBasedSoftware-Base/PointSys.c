@@ -166,10 +166,10 @@ int levelScore(int lvlTries, int lvlType, bool complete) {
 }
 
 
-int finalScore() {
+int finalScore() {										// Data Management Module wil call this in the "saveLeaderboard" function.
 
 	int scoreSum = 0;
-	for (int i = 0; i <= MAX_LEVELS; i++)
+	for (int i = 0; i < MAX_LEVELS; i++)
 	{
 		scoreSum += levelArr[i].points;
 	}
