@@ -47,7 +47,7 @@ int saveLeaderboard()
 	FILE* fp;
 	printf("Please enter your name:");
 	scanf("%s", &tmp.name);
-	tmp.score = score;
+	tmp.score = finalScore();
 	fp = fopen("leaderboard.txt", "a");
 	if (fp == NULL)
 	{
