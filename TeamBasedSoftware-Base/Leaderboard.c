@@ -6,46 +6,21 @@
 
 int score = 0;
 
-int mainMenu()
-{
-	system("cls");
-
-	char select;
-	printf("****************************************************************************\n");
-	printf("*                                                                          *\n");
-	printf("*                                1.start game                              *\n");
-	printf("*                                2.leaderboard                             *\n");
-	printf("*                                                                          *\n");
-	printf("****************************************************************************\n");
-	select = _getch();
-	if (select == '1')
-	{
-		/*gamebegin();
-		gameplay();
-		close();*/
-		saveLeaderboard();
-	}
-	if (select == '2')
-	{
-		leaderboard();
-	}
-	return  0;
-}
 
 
 void leaderboardMenu()
 {
 	system("cls");
-	printf("********************************************************************************");
-	printf("*^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^*");
-	printf("\t\t\t\t  1.display from high to low\n\n");
-	printf("\t\t\t\t  2.display in alphabet order\n\n");
-	printf("\t\t\t\t  3.clear leaderboard\n\n");
-	printf("\t\t\t\t  4.main menu  \n\n");
-	printf("\t\t\t       select the corresponding key and press enter\n");
-	printf("*^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^*");
-	printf("********************************************************************************");
-	return;
+	printf("****************************************************************************\n");
+	printf("*                                                                          *\n");
+	printf("*                    1.display from high to low                            *\n");
+	printf("*                    2.display in alphabet order                           *\n");
+	printf("*                    3.clear leaderboard                                   *\n");
+	printf("*                    4.main menu                                           *\n");
+	printf("*                                                                          *\n");
+	printf("****************************************************************************\n");
+
+	return 0;
 
 }
 
@@ -59,8 +34,9 @@ int leaderboard()
 	case '1':HightoLow(); break;
 	case '2':alphabet(); break;
 	case '3':clearLeaderboard(); break;
-	case '4':mainMenu(); break;
+	case '4':main(); break;
 	default:printf("\t Error!\n Please try again:");
+
 
 	}
 }
@@ -109,7 +85,7 @@ int HightoLow()
 		}
 		printf("\n Press any key to go back to the main menu");
 		_getch();
-		mainMenu();
+		main();
 	}
 
 	else
@@ -159,7 +135,7 @@ int alphabet()
 		}
 		printf("\n Press any key to go back to the main menu");
 		_getch();
-		mainMenu();
+		main();
 	}
 
 	else
@@ -203,7 +179,7 @@ int clearLeaderboard()
 		fclose(fp);
 		printf("\n Success!\n Press any key to go back to the main menu");
 		_getch();
-		mainMenu();
+		main();
 	}
 	else leaderboardMenu();
 }
