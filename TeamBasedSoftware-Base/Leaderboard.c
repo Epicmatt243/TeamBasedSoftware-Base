@@ -1,49 +1,26 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include"Leaderboard.h"
-
+#include "Problems.h"
+#include "Adventure.h"
+#include "PointSys.h"
 
 int score = 0;
 
-int mainMenu()
-{
-	system("cls");
-
-	char select;
-	printf("****************************************************************************\n");
-	printf("*                                                                          *\n");
-	printf("*                                1.start game                              *\n");
-	printf("*                                2.leaderboard                             *\n");
-	printf("*                                                                          *\n");
-	printf("****************************************************************************\n");
-	select = _getch();
-	if (select == '1')
-	{
-		/*gamebegin();
-		gameplay();
-		close();*/
-		saveLeaderboard();
-	}
-	if (select == '2')
-	{
-		leaderboard();
-	}
-	return  0;
-}
 
 
 void leaderboardMenu()
 {
 	system("cls");
-	printf("********************************************************************************");
-	printf("*^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^*");
-	printf("\t\t\t\t  1.display from high to low\n\n");
-	printf("\t\t\t\t  2.display in alphabet order\n\n");
-	printf("\t\t\t\t  3.clear leaderboard\n\n");
-	printf("\t\t\t\t  4.main menu  \n\n");
-	printf("\t\t\t       select the corresponding key and press enter\n");
-	printf("*^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^  ^_^*");
-	printf("********************************************************************************");
-	return;
+	printf("****************************************************************************\n");
+	printf("*                                                                          *\n");
+	printf("*                    1.display from high to low                            *\n");
+	printf("*                    2.display in alphabet order                           *\n");
+	printf("*                    3.clear leaderboard                                   *\n");
+	printf("*                    4.main menu                                           *\n");
+	printf("*                                                                          *\n");
+	printf("****************************************************************************\n");
+
+	return 0;
 
 }
 
@@ -54,11 +31,12 @@ int leaderboard()
 	select = _getch();
 	switch (select) //options
 	{
-	case '1':HightoLow();break;
-	case '2':alphabet();break;
-	case '3':clearLeaderboard();break;
-	case '4':mainMenu();break;
+	case '1':HightoLow(); break;
+	case '2':alphabet(); break;
+	case '3':clearLeaderboard(); break;
+	case '4':main(); break;
 	default:printf("\t Error!\n Please try again:");
+
 
 	}
 }
@@ -107,14 +85,14 @@ int HightoLow()
 		}
 		printf("\n Press any key to go back to the main menu");
 		_getch();
-		mainMenu();
+		main();
 	}
 
 	else
-		for (i = 0;i < n - 1;i++) //use bubble sort to arrange the rank from the highest to lowest
+		for (i = 0; i < n - 1; i++) //use bubble sort to arrange the rank from the highest to lowest
 		{
 			k = i;
-			for (j = i + 1;j < n;j++)
+			for (j = i + 1; j < n; j++)
 				if (tmp[j].score > tmp[k].score) //comparing the size
 					k = j;
 			temp = tmp[k];
@@ -157,14 +135,14 @@ int alphabet()
 		}
 		printf("\n Press any key to go back to the main menu");
 		_getch();
-		mainMenu();
+		main();
 	}
 
 	else
-		for (i = 0;i < n - 1;i++) //use bubble sort to arrange the rank in alphabet order
+		for (i = 0; i < n - 1; i++) //use bubble sort to arrange the rank in alphabet order
 		{
 			k = i;
-			for (j = i + 1;j < n;j++)
+			for (j = i + 1; j < n; j++)
 				if (strcmp(tmp[j].name, tmp[k].name) > 0) //compare two strings
 					k = j;
 			temp = tmp[k];
@@ -201,7 +179,7 @@ int clearLeaderboard()
 		fclose(fp);
 		printf("\n Success!\n Press any key to go back to the main menu");
 		_getch();
-		mainMenu();
+		main();
 	}
 	else leaderboardMenu();
 }
