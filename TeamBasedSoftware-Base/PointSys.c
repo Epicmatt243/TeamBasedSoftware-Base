@@ -37,7 +37,7 @@ void levelInfo(levels* levelArr, int probType, bool correct, int attempts) {
 	levelArr[i].tries = attempts;
 	levelArr[i].type = probType;
 	levelArr[i].complete = correct;
-	levelArr[i].points = levelScore(levelArr[i].tries, levelArr[i].type, levelArr[i].complete);
+	levelArr[i].points = levelScore(levelArr[i].tries, levelArr[i].type, levelArr[i].complete, levelArr[i].num);
 }
 
 
@@ -160,17 +160,20 @@ int levelScore(int lvlTries, int lvlType, bool complete) {
 	default:
 		return;
 	}
-	printf("%d\n", lvlScore);
+	printf("\nYou earned %d points\n", lvlScore);
+	printf("\nPress any key to continue...");
+	_getch();
 	return lvlScore;
 }
 
 
-int finalScore() {										// Data Management Module wil call this in the "saveLeaderboard" function.
+int finalScore() {										// Data Management Module will call this in the "saveLeaderboard" function.
 
 	int scoreSum = 0;
 	for (int i = 0; i < MAX_LEVELS; i++)
 	{
 		scoreSum += levelArr[i].points;
 	}
+	printf("\nYour final score is: %d\n", scoreSum);
 	return scoreSum;
 }

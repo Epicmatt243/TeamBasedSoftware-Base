@@ -81,7 +81,7 @@ int displayProblem(problems *wordProblem, int numProblems) {
 	int randomProblem = rand() % numProblems;	//randomly generated number used to select an unused problem
 
 	if (wordProblem[randomProblem].type == UNSCRAMBLE || wordProblem[randomProblem].type == RIDDLE) {	//for unscramble problems and riddles
-		for (int attempts = 1; attempts <= 4; attempts++)
+		for (int attempts = 1; attempts <= 6; attempts++)
 		{
 			printf("\n%s\n", wordProblem[randomProblem].problem);
 			if (getPlayerAnswer(wordProblem, randomProblem, attempts))
@@ -107,12 +107,12 @@ int getPlayerAnswer(problems *wordProblem, int currentProblemNum, int currentAtt
 	scanf_s("%s", input, MAX_INPUT_LENGTH);
 
 	if (!strcmp(wordProblem[currentProblemNum].answer, input)) {
-		checkAnswer(true, wordProblem->type, currentAttempt);
+		checkAnswer(true, wordProblem[currentProblemNum].type, currentAttempt);
 		return 1;
 	}
 	
 	else {
-		checkAnswer(false, wordProblem->type, currentAttempt);
+		checkAnswer(false, wordProblem[currentProblemNum].type, currentAttempt);
 		return 0;
 	}
 
@@ -152,7 +152,7 @@ void hangman(problems* wordProblem, int problemNum) {
 
 		char userInput = tolower(_getch());
 
-		printf("%c", userInput);
+		printf("%c\n", userInput);
 
 		bool correctGuess = false;
 
@@ -178,14 +178,15 @@ void hangman(problems* wordProblem, int problemNum) {
 
 		if (numIncorrect == MAX_INCORRECT_GUESSES)
 		{
-			checkAnswer(win, wordProblem->type, numIncorrect);
 			printf("\nYou lose...\n");
+			checkAnswer(win, wordProblem[problemNum].type, numIncorrect + 1);
 			continueGame = false;
 		}
 
 		else if (win) {
-			checkAnswer(win, wordProblem->type, numIncorrect);
+			
 			printf("\nYou completed it!...\n");
+			checkAnswer(win, wordProblem[problemNum].type, numIncorrect + 1);
 			continueGame = false;
 		}
 	}
