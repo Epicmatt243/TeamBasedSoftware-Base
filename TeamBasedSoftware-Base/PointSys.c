@@ -37,7 +37,7 @@ void levelInfo(levels* levelArr, int probType, bool correct, int attempts) {
 	levelArr[i].tries = attempts;
 	levelArr[i].type = probType;
 	levelArr[i].complete = correct;
-	levelArr[i].points = levelScore(levelArr[i].tries, levelArr[i].type, levelArr[i].complete, levelArr[i].num);
+	levelArr[i].points = levelScore(levelArr[i].tries, levelArr[i].type, levelArr[i].complete);
 }
 
 
