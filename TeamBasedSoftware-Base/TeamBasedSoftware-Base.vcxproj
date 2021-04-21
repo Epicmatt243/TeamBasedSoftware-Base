@@ -139,11 +139,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Adventure.c" />
+    <ClCompile Include="Leaderboard.c" />
     <ClCompile Include="main.c" />
-    <ClCompile Include="PointSys.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PointSys.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
