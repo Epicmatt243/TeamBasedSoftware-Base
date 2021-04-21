@@ -18,24 +18,10 @@
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Problems.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Adventure.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Leaderboard.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Problems.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Adventure.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Leaderboard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
