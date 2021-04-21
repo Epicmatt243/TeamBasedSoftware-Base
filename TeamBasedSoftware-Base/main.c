@@ -3,31 +3,36 @@
 #include <stdio.h>
 #include <Windows.h>
 #include <string.h>
+#include <stdbool.h>
 #include "Problems.h"
 #include "Adventure.h"
 #include "Leaderboard.h"
 
 int main() {
-	system("cls");
+	
+	while (true) {
+	
+		system("cls");
 
-	char select;
-	printf("****************************************************************************\n");
-	printf("*                                                                          *\n");
-	printf("*                                1.start game                              *\n");
-	printf("*                                2.leaderboard                             *\n");
-	printf("*                                                                          *\n");
-	printf("****************************************************************************\n");
-	select = _getch();
-	if (select == '1')
-	{
-		gamebegin();
-		saveLeaderboard();
+		char select;
+		printf("****************************************************************************\n");
+		printf("*                                                                          *\n");
+		printf("*                                1.start game                              *\n");
+		printf("*                                2.leaderboard                             *\n");
+		printf("*                                                                          *\n");
+		printf("****************************************************************************\n");
+		select = _getch();
+		if (select == '1')
+		{
+			gamebegin();
+			saveLeaderboard();
+			break;
+		}
+		if (select == '2')
+		{
+			leaderboard();
+		}
 	}
-	if (select == '2')
-	{
-		leaderboard();
-	}
-
 	return 0;
 
 }

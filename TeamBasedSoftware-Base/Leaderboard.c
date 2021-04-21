@@ -34,7 +34,7 @@ int leaderboard()
 	case '1':HightoLow(); break;
 	case '2':alphabet(); break;
 	case '3':clearLeaderboard(); break;
-	case '4':main(); break;
+	case '4':return 1; break;
 	default:printf("\t Error!\n Please try again:");
 
 
@@ -83,8 +83,7 @@ int HightoLow()
 			printf("\n\t\t Successes! \n");
 			fclose(fp);
 		}
-		printf("\n Press any key to go back to the main menu");
-		_getch();
+		
 		main();
 	}
 
@@ -106,6 +105,9 @@ int HightoLow()
 		i++;
 	}
 	fclose(fp);
+
+	printf("\n Press any key to go back to the main menu");
+	_getch();
 	return 0;
 }
 
@@ -133,8 +135,7 @@ int alphabet()
 			printf("\n\t\t Successes! \n");
 			fclose(fp);
 		}
-		printf("\n Press any key to go back to the main menu");
-		_getch();
+		
 		main();
 	}
 
@@ -156,6 +157,9 @@ int alphabet()
 		i++;
 	}
 	fclose(fp);
+	
+	printf("\n Press any key to go back to the main menu");
+	_getch();
 	return 0;
 }
 
