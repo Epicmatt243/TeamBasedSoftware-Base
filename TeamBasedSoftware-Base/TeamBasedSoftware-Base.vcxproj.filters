@@ -27,6 +27,9 @@
     <ClCompile Include="Leaderboard.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PointSys.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Problems.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Leaderboard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PointSys.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

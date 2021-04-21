@@ -2,6 +2,7 @@
 #include"Leaderboard.h"
 #include "Problems.h"
 #include "Adventure.h"
+#include "PointSys.h"
 
 int score = 0;
 

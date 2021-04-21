@@ -10,6 +10,7 @@
 #include "Problems.h"
 #include "Adventure.h"
 #include "Leaderboard.h"
+#include "PointSys.h"
 
 void intializeProblems(problems *wordProblem) {
 
@@ -106,20 +107,16 @@ int getPlayerAnswer(problems *wordProblem, int currentProblemNum, int currentAtt
 	scanf_s("%s", input, MAX_INPUT_LENGTH);
 
 	if (!strcmp(wordProblem[currentProblemNum].answer, input)) {
-
-		//should send information(like the currentAttempt #) to point system module as a correct answer
+		checkAnswer(true, wordProblem->type, currentAttempt);
 		return 1;
 	}
 	
 	else {
-
-		//should this send information to point system module as an incorrect answer?
-		//or not communicate with point system module at all?
+		checkAnswer(false, wordProblem->type, currentAttempt);
 		return 0;
 	}
 
 }
-
 
 
 void hangman(problems* wordProblem, int problemNum) {
@@ -181,13 +178,13 @@ void hangman(problems* wordProblem, int problemNum) {
 
 		if (numIncorrect == MAX_INCORRECT_GUESSES)
 		{
-			//print out message for failing hangman
+			checkAnswer(win, wordProblem->type, numIncorrect);
 			printf("\nYou lose...\n");
 			continueGame = false;
 		}
 
 		else if (win) {
-			//print out message for completing hangman
+			checkAnswer(win, wordProblem->type, numIncorrect);
 			printf("\nYou completed it!...\n");
 			continueGame = false;
 		}

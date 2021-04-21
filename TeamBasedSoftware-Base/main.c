@@ -27,7 +27,7 @@ int main() {
 
 		system("cls");		//clears the command window
 
-		//should print out a message if the user got it right or wrong
+		//needs to deal with saving the final score (and outputting it before quitting program?)
 
 	}
 	
