@@ -55,8 +55,6 @@ int gamebegin()
 
 		system("cls");		//clears the command window
 
-		//needs to deal with saving the final score (and outputting it before quitting program?)
-
 	}
 	return 0;
 }
