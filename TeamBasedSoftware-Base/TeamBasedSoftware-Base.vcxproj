@@ -142,6 +142,12 @@
     <ClCompile Include="Adventure.c" />
     <ClCompile Include="Leaderboard.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="Problems.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Adventure.h" />
+    <ClInclude Include="Leaderboard.h" />
+    <ClInclude Include="Problems.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
